@@ -71,8 +71,10 @@ function getResizeMetadata(filename, originWidth, originHeight) {
       resizeHeight = originHeight;
     }
 
+    const urlWithoutExt = `${resizeImageURLPrefix}${filenameWithoutExt}-${resolution}`;
     targets[resolution] = {
-      url: `${resizeImageURLPrefix}${filenameWithoutExt}-${resolution}.${ext}`,
+      url: `${urlWithoutExt}.${ext}`,
+      webpUrl: `${urlWithoutExt}.webp`,
       width: resizeWidth,
       height: resizeHeight,
     };
